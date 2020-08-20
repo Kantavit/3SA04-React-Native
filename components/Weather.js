@@ -6,7 +6,10 @@ export default function Weather(props) {
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
-        temp: 0
+        temp: 0,
+        temp_max: 0,
+        temp_min: 0,
+        name: '-'
     })
 
     useEffect(() => {
@@ -32,21 +35,41 @@ export default function Weather(props) {
 
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
-            <Text style={styles.innerText}>Zip Code: {props.zipCode}</Text>
-            <Forecast {...forecastInfo} />
+                <Text style={styles.innerText}>Zip Code: {props.zipCode}</Text>
+                <Forecast {...forecastInfo} />
         </ImageBackground>
+        
     );
 }
 
 const styles = StyleSheet.create({
     backdrop: {
-        flexDirection:'row',
+        flexDirection:'column',
         justifyContent: 'space-evenly',
         alignItems:'center',
         width: '100%',
-        height: '100%'
+        height: '100%',
+
+        // width: '100%', 
+        // height: '50%', 
+        // opacity: 0.3, 
+        // backgroundColor: '#011',
+        // flexDirection: 'column', 
+        // alignItems: 'center', 
+        // justifyContent: 'center'
     },
     innerText: {
         color: 'white',
+        fontSize: 20
+    },
+    container: { 
+        // paddingTop: 20,
+        width: '100%', 
+        height: '50%', 
+        opacity: 0.3, 
+        backgroundColor: '#011',
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center' 
     },
 });
