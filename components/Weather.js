@@ -41,7 +41,8 @@ export default function Weather(props) {
                 <Text style={styles.innerText}>Zip Code: {props.zipCode}</Text>
                 <Forecast {...forecastInfo} />
             </View>
-            <Button color="orange" title="Go back" onPress={() => navigation.navigate('City Name/Zip Code')} />
+            <Button color="orange" title="                                              Go back                                              " 
+            onPress={() => navigation.navigate('City Name/Zip Code')} />
         </ImageBackground>
         
     );
@@ -63,6 +64,7 @@ const styles = StyleSheet.create({
         textShadowOffset: {width: 2,height: 2},
         textShadowRadius: 10,
         textShadowColor:'black',
+        fontFamily: 'sans-serif-condensed'
     },
     container: { 
         flexDirection: 'column', 

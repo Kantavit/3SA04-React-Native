@@ -24,5 +24,6 @@ const styles = StyleSheet.create({
         textShadowOffset: {width: 2,height: 2},
         textShadowRadius: 10,
         textShadowColor:'black',
+        fontFamily: 'sans-serif-condensed'
     },
 });
