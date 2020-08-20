@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, Text, StyleSheet, Button } from 'react-native'
+import {View, Text, StyleSheet} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 
 export default function Forecast(props) {
@@ -11,8 +11,6 @@ export default function Forecast(props) {
             <Text style={styles.innerText}>description: {props.description}</Text>
             <Text style={styles.innerText}>Temp: {props.temp} °C</Text>
             <Text style={styles.innerText}>Temp max/min: ({props.temp_max} °C /{props.temp_min} °C)</Text>
-
-            <Button color="orange" title="Go back" onPress={() => navigation.navigate('City Name/Zip Code')} />
         </View>
     );
 }
@@ -20,10 +18,11 @@ export default function Forecast(props) {
 const styles = StyleSheet.create({
     innerText: {
         color: 'white',
-        fontSize: 20
+        textAlign: 'center',
+        fontSize: 23,
+        paddingBottom: 15,
+        textShadowOffset: {width: 2,height: 2},
+        textShadowRadius: 10,
+        textShadowColor:'black',
     },
-    // fixToText: {
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-between',
-    //   },
 });

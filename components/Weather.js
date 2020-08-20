@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import {Text, ImageBackground, StyleSheet} from 'react-native'
+import {Text, ImageBackground, StyleSheet, View, Button} from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import Forecast from './Forecast'
 
 export default function Weather(props) {
+    const navigation = useNavigation()
     const [forecastInfo, setForecastInfo] = useState({
         main: '-',
         description: '-',
@@ -36,8 +37,11 @@ export default function Weather(props) {
 
     return (
         <ImageBackground source={require('../bg.jpg')} style={styles.backdrop}>
+            <View style={styles.container}>
                 <Text style={styles.innerText}>Zip Code: {props.zipCode}</Text>
                 <Forecast {...forecastInfo} />
+            </View>
+            <Button color="orange" title="Go back" onPress={() => navigation.navigate('City Name/Zip Code')} />
         </ImageBackground>
         
     );
@@ -46,31 +50,27 @@ export default function Weather(props) {
 const styles = StyleSheet.create({
     backdrop: {
         flexDirection:'column',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         alignItems:'center',
         width: '100%',
         height: '100%',
-
-        // width: '100%', 
-        // height: '50%', 
-        // opacity: 0.3, 
-        // backgroundColor: '#011',
-        // flexDirection: 'column', 
-        // alignItems: 'center', 
-        // justifyContent: 'center'
     },
     innerText: {
         color: 'white',
-        fontSize: 20
+        textAlign: 'center',
+        fontSize: 23,
+        paddingBottom: 15,
+        textShadowOffset: {width: 2,height: 2},
+        textShadowRadius: 10,
+        textShadowColor:'black',
     },
     container: { 
-        // paddingTop: 20,
-        width: '100%', 
-        height: '50%', 
-        opacity: 0.3, 
-        backgroundColor: '#011',
         flexDirection: 'column', 
         alignItems: 'center', 
-        justifyContent: 'center' 
+        justifyContent: 'center', 
+        width: '100%', 
+        height: '50%', 
+        opacity: 0.5, 
+        backgroundColor: '#012',
     },
 });

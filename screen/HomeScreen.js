@@ -26,13 +26,22 @@ const styles = StyleSheet.create({
         height: '100%',
     },
     HeaderText: {
+        fontWeight: 'bold',
+        textTransform: 'uppercase',
+        textShadowOffset: {width: 2,height: 2},
+        textShadowRadius: 10,
+        textShadowColor:'black',
         textAlign: 'center',
         color: 'white',
-        fontSize: 50
+        fontSize: 50,
     },
     innerText: {
         textAlign: 'center',
         color: 'white',
-        fontSize: 25
+        fontSize: 25,
+        textShadowOffset: {width: 2,height: 2},
+        textShadowRadius: 10,
+        textShadowColor:'black',
+        paddingBottom: 300
     },
 })
