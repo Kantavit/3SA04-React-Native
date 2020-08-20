@@ -1,9 +1,8 @@
 import React from 'react'
-import { FlatList, View, Text, StyleSheet, ImageBackground } from 'react-native'
+import { FlatList, View, Text, StyleSheet, ImageBackground, Button } from 'react-native'
 import { StatusBar } from 'expo-status-bar';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import { color } from 'react-native-reanimated';
 
 const availableZipItems = [
     { place: 'Hatyai', code: '90110' }, 
@@ -35,6 +34,7 @@ export default function ZipCodeScreen(){
                     renderItem={({item}) => <ZipItem {...item} navigation={navigation}/>}
                 />
                 <StatusBar style="auto" />
+                <Button color="orange" title="Go back" onPress={() => navigation.navigate('Home')} />
             </View>
         </ImageBackground>
     );

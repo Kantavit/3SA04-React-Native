@@ -12,7 +12,7 @@ export default function Forecast(props) {
             <Text style={styles.innerText}>Temp: {props.temp} °C</Text>
             <Text style={styles.innerText}>Temp max/min: ({props.temp_max} °C /{props.temp_min} °C)</Text>
 
-            <Button color="orange" title="Go back" onPress={() => navigation.navigate('Home')} />
+            <Button color="orange" title="Go back" onPress={() => navigation.navigate('City Name/Zip Code')} />
         </View>
     );
 }

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {Text, ImageBackground, StyleSheet} from 'react-native'
+import { useNavigation } from '@react-navigation/native';
 import Forecast from './Forecast'
 
 export default function Weather(props) {
